@@ -62,7 +62,7 @@ export class KeyboardKey extends React.Component<KeyboardKeyProps> {
     public static contextTypes: any = { muiTheme: PropTypes.object.isRequired };
 
     @bind
-    private onTouchTap(): void {
+    private onClick(): void {
         const { onKeyPress, keyboardKey } = this.props;
         if((keyboardKey.length === 1) || KeyboardKey.specialIcons.hasOwnProperty(keyboardKey)) {
             onKeyPress(keyboardKey);
@@ -106,7 +106,7 @@ export class KeyboardKey extends React.Component<KeyboardKeyProps> {
                 minWidth: width
             },
             primary: constants.boolTrue,
-            onTouchTap: this.onTouchTap,
+            onClick: this.onClick,
             disableFocusRipple: disableEffects,
             disableKeyboardFocus: disableEffects,
             disableTouchRipple: disableEffects
